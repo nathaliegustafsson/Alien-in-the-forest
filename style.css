@@ -1,6 +1,31 @@
-.space-forest {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+body {
+    margin: 0;
+    background-image: url(./images/space-forest.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 2px solid #2b3242;
+    border-radius: 1rem;
+    height: 25rem;
+    width: 45rem;
+    background-color: #394156;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button-alternatives {
+    font-family: 'Roboto', sans-serif;
 }
