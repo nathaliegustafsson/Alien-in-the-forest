@@ -9,6 +9,12 @@ body {
     align-items: center;
 }
 
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    color: #2c1d2e;
+}
+
 .container {
     border: 2px solid #2b3242;
     border-radius: 1rem;
@@ -23,12 +29,26 @@ body {
 }
 
 p {
-    color: white;
+    color: rgb(207, 205, 205);
     font-family: 'Roboto', sans-serif;
+}
+
+.button-alternatives {
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 button {
     font-family: 'Roboto', sans-serif;
     border-radius: 2rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.7rem;
+    background-color: white;
+    border: none;
+}
+
+button:hover {
+    border: 3px solid #96669f;
+
 }
