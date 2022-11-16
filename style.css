@@ -29,11 +29,11 @@ h1 {
 }
 
 p {
-    color: rgb(207, 205, 205);
+    color: rgb(222, 222, 222);
     font-family: 'Roboto', sans-serif;
 }
 
-.button-alternatives {
+#button-alternatives {
     width: 20rem;
     display: flex;
     justify-content: space-between;
@@ -42,6 +42,7 @@ p {
 
 button {
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(222, 222, 222);
     border-radius: 2rem;
     padding: 0.7rem;
     background-color: white;
@@ -49,6 +50,7 @@ button {
 }
 
 button:hover {
-    border: 3px solid #96669f;
+    /* border: 3px solid #96669f; */
+    background-color: #a295ba;
 
 }
