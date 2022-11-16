@@ -19,23 +19,29 @@ function loadStartScene() {
 
     button2.textContent = "Nej";
     button2.addEventListener('click', loadNoToStartScene);
+
 }
 
 
 /** Fortsättning om man väljer JA, samt får ge rymdvarelsen ett namn */
 function loadYesToStartScene() {
     const text = document.getElementById('story-text');
-    const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
+    const button1 = document.getElementById('alt-1').style.display = "none";
+    const button2 = document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Vad vill du kalla rymdvarelsen du vill hjälpa?"
+    document.getElementById('input-box').onclick = function() {
+        var alienName = document.getElementById("name").value;
+    }
+
+    text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Ge ett namn till rymdvarelsen du vill hjälpa."
 }
 
 
-/** Fortsättning om man väljer NEJ, får gå tillbaka till startsidan*/
+/** Fortsättning om man väljer NEJ, får gå tillbaka till startsidan */
 function loadNoToStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2').style.display = "none";
 
     button1.textContent = "Gå tillbaka";
     button1.addEventListener('click', loadStartScene);
@@ -43,6 +49,9 @@ function loadNoToStartScene() {
     text.textContent = "Åh, vad tråkigt att du inte vill hjälpa rymdvarelsen :( Vi får hoppas att den hittar sin väg hem själv </3"
 }
 
+
+
+// document.getElementById("element").style.display = "none";
 
 
 
