@@ -23,17 +23,16 @@ function loadStartScene() {
 }
 
 
-/** Fortsättning om man väljer JA, samt får ge rymdvarelsen ett namn */
+/** Fortsättning om man väljer JA, får ge rymdvarelsen ett namn */
 function loadYesToStartScene() {
     const text = document.getElementById('story-text');
-    const button1 = document.getElementById('alt-1').style.display = "none";
-    const button2 = document.getElementById('alt-2').style.display = "none";
-
-    document.getElementById('input-box').onclick = function() {
-        var alienName = document.getElementById("name").value;
-    }
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
 
     text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Ge ett namn till rymdvarelsen du vill hjälpa."
+
+    button1.textContent = "Ja";
+    button1.addEventListener('click', loadBeginningOfStory);
 }
 
 
@@ -41,17 +40,32 @@ function loadYesToStartScene() {
 function loadNoToStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2').style.display = "none";
+    const button2 = document.getElementById('alt-2');
 
     button1.textContent = "Gå tillbaka";
     button1.addEventListener('click', loadStartScene);
+
+    button2.textContent = "Nej, jag vill hjälpa!";
+    button2.addEventListener('click', loadYesToStartScene);
 
     text.textContent = "Åh, vad tråkigt att du inte vill hjälpa rymdvarelsen :( Vi får hoppas att den hittar sin väg hem själv </3"
 }
 
 
+/** När man gett rymndvarelsen ett namn fortsätter storyn */
+function loadBeginningOfStory() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
 
-// document.getElementById("element").style.display = "none";
+    text.textContent = "Rymdvarelsen börjar gå genom skogen, det är alldeles tyst och månen lyser starkt på himlen. Efter en stund kommer *NAMN* fram till ett vägskäl, vilken väg ska hen ta?"
+
+    button1.textContent = "Gå vänster";
+    button1.addEventListener('click', );
+
+    button2.textContent = "Gå höger";
+    button2.addEventListener('click', loadStartScene);
+}
 
 
 
@@ -60,6 +74,16 @@ function loadNoToStartScene() {
 
 
 
+
+    // const input = document.createElement('input');
+    // input.setAttribute('id', 'alien');
+    // input.setAttribute('type', 'text');
+    // document.body.appendChild(input);
+
+    // const alienName = document.getElementById('alien');
+    // alienName.setAttribute('placeholder', 'Skriv här');
+    // const value = alienName.value;
+    // console.log(value);
 
 
 
