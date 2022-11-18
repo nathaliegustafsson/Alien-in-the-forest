@@ -15,13 +15,14 @@ function loadStartScene() {
     text.textContent = "Välkommen till jorden! En rymdvarelse har kraschat med sin rymdfärja, och måste hitta en ny rymdfärja för att kunna ta sig hem. Rymdvarelsen har landat i en skog mitt i natten och du måste hjälpa den hitta sin väg genom skogen för att finna rymdfärjan. Vill du hjälpa rymdvarelsen?";
 
     button1.textContent = "Ja";
-    button1.addEventListener('click', loadYesToStartScene);
+    button1.onclick = loadYesToStartScene;
 
     button2.textContent = "Nej";
-    button2.addEventListener('click', loadNoToStartScene);
+    button2.onclick = loadNoToStartScene;
 }
 
-/** Fortsättning om man väljer NEJ, får gå tillbaka till startsidan */
+
+/** Om man väljer NEJ, får gå tillbaka till startsidan */
 function loadNoToStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -30,14 +31,14 @@ function loadNoToStartScene() {
     text.textContent = "Åh, vad tråkigt att du inte vill hjälpa rymdvarelsen :( Vi får hoppas att den hittar sin rymdfärja själv </3";
 
     button1.textContent = "Gå tillbaka";
-    button1.addEventListener('click', loadStartScene);
+    button1.onclick = loadStartScene;
 
     button2.textContent = "Nej, jag vill hjälpa!";
-    button2.addEventListener('click', loadYesToStartScene);
+    button2.onclick = loadYesToStartScene;
 }
 
 
-/** Fortsättning om man väljer JA, får ge rymdvarelsen ett namn */
+/** Om man väljer JA, får ge rymdvarelsen ett namn */
 function loadYesToStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -46,14 +47,14 @@ function loadYesToStartScene() {
     text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Ge ett namn till rymdvarelsen du vill hjälpa.";
 
     button1.textContent = "Här ska det vara ett inputfält";
-    button1.addEventListener('click', loadBeginningOfStory);
+    button1.onclick = loadBeginningOfStory;
     
     button2.textContent = "Här ska det vara ett inputfält";
-    button2.addEventListener('click', loadBeginningOfStory);
+    button2.onclick = loadBeginningOfStory;
 }
 
 
-/** När man gett rymndvarelsen ett namn fortsätter storyn */
+/** När man gett rymndvarelsen ett namn fortsätter storyn med ett vägval */
 function loadBeginningOfStory() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -62,25 +63,10 @@ function loadBeginningOfStory() {
     text.textContent = "Rymdvarelsen börjar gå genom skogen, det är alldeles tyst och månen lyser starkt på himlen. Efter en stund kommer *NAMN* fram till ett vägskäl, vilken väg ska hen ta?";
 
     button1.textContent = "Gå vänster";
-    button1.addEventListener('click', loadLeftStory);
+    button1.onclick = loadLeftStory;
 
     button2.textContent = "Gå höger";
-    button2.addEventListener('click', loadRightStory);
-}
-
-/** HÖGER VÄG */
-function loadRightStory() {
-    const text = document.getElementById('story-text');
-    const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
-
-    text.textContent = "*NAMN* tar den högra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *namn* någon ropa efter hen, vad ska namn göra?";
-
-    button1.textContent = "Ignorera och fortsätta leta i skogen";
-    button1.addEventListener('click', );
-
-    button2.textContent = "Se efter vem som ropar";
-    button2.addEventListener('click', )
+    button2.onclick = loadRightStory;
 }
 
 
@@ -92,12 +78,46 @@ function loadLeftStory() {
 
     text.textContent = "*NAMN* tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *NAMN* ett ljud från en buske, vad ska *NAMN* göra?";
     
-    button1.textContent = "Ignorera ljudet från busken och fortsätta";
-    button1.addEventListener('click', );
+    button1.textContent = "Ignorera ljudet från busken och fortsätt";
+    button1.onclick = () => {};
 
     button2.textContent = "Undersöka busken";
-    button2.addEventListener('click', )
+    button2.onclick = () => {};
 }
+
+
+/** HÖGER VÄG */
+function loadRightStory() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "*NAMN* tar den högra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *namn* någon ropa efter hen, vad ska namn göra?";
+
+    button1.textContent = "Ignorera och fortsätta leta i skogen";
+    button1.onclick = () => {};
+
+    button2.textContent = "Se efter vem som ropar";
+    button2.onclick = () => {};
+}
+
+
+/** VÄNSTER VÄG */
+function loadLeftStory() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "*NAMN* tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *NAMN* ett ljud från en buske, vad ska *NAMN* göra?";
+    
+    button1.textContent = "Ignorera ljudet från busken och fortsätt";
+    button1.onclick = () => {};
+
+    button2.textContent = "Undersöka busken";
+    button2.onclick = () => {};
+}
+
+
 
 
 
