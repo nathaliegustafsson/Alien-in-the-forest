@@ -132,7 +132,6 @@ function loadContinueAlone() {
     
     button2.textContent = "alt 2";
     button2.onclick = () => {};
-    
 }
 
 
@@ -145,10 +144,10 @@ function loadSquirrelScene() {
     text.textContent = alienName + " undersöker busken och hittar en ekorre. “AAAH!” - skrek ekorren. “SKRÄMS INTE SÅ!!”. " + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + " är ute och går mitt i natten. Vad ska " + alienName + " svara?";
 
     button1.textContent = "Är ärlig och förklarar situationen";
-    button1.onclick = () => {};
+    button1.onclick = loadHonestToSquirrel;
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen är ute på en kvällspromenad";
-    button2.onclick = loadContinueAlone;
+    button2.onclick = () => {};
 }
 
 
@@ -164,11 +163,40 @@ function loadWeaselScene() {
     button1.onclick = () => {};
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen gillar den friska luften på natten";
-    button2.onclick = loadContinueAlone;
-
+    button2.onclick = () => {};
 }
 
 
+/** Tar emot Ekorrens hjälp */
+function loadHonestToSquirrel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "”WOW, vilken story!” - utbrister vesslan. “Vilken tur att du är oskadd! Vill du ha hjälp att hitta ditt andra skepp?” - frågar Vesslan.";
+
+    button1.textContent = "";
+    button1.onclick = () => {};
+
+    button2.textContent = "";
+    button2.onclick = () => {};
+}
+
+
+/** Tar emot Vesslans hjälp */
+function loadHonestToWeasel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "";
+
+    button1.textContent = "";
+    button1.onclick = () => {};
+
+    button2.textContent = "";
+    button2.onclick = () => {};
+}
 
 
 
@@ -230,58 +258,3 @@ function loadWeaselScene() {
 //     button2.textContent = "Undersök busken";
 //     button2.onclick = () => {};
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const textElement = document.getElementById('story-text');
-// const alternativeButtons = document.getElementById('button-alternatives');
-
-
-// /** Olika saker som varelsen plockar upp/tar med sig genom spelet, ett tomt objekt */
-// let state = {}
-
-
-// /** Start-delen av spelet, state är tomt som fylls av det som väljs*/
-// function startGame() {
-//     state = {}
-//     showTextNode(1);
-
-// }
-
-// function showTextNode(textNodeIndex) {
-    
-
-// }
-
-
-// function selectAlternative(option) {
-
-// }
-
-// const textNodes = [
-//     {
-//         id: 1,
-//         text: 'Välkommen till jorden! En rymdvarelse har kraschat med sin rymdfärja, och måste hitta en ny rymdfärja för att kunna ta sig hem. Rymdvarelsen har landat i en skog mitt i natten och du måste hjälpa den hitta sin väg genom skogen för att finna rymdfärjan.',
-//         options: [ 
-//             {
-//                 text: 'Hjälp rymdvarelsen',
-//             },
-//             {
-//                 text: 'Hjälp inte rymdvarelsen'
-//             }
-//         ]
-//     }
-// ]
-
-// /** Här kallas funktionen när sidan laddats klart */
-// startGame ()
