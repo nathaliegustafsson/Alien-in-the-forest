@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", main);
 
 
-/** Användaren väljer ett namn till rymdvarelsen innan storyn börjar */
+/** Användaren väljer ett namn till rymdvarelsen innan början storyn börjar */
 let alienName = "";
 
 
@@ -96,7 +96,7 @@ function loadLeftStory() {
     text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
     
     button1.textContent = "Ignorera ljudet från busken och fortsätt";
-    button1.onclick = () => {};
+    button1.onclick = loadContinueAlone;
 
     button2.textContent = "Undersöka busken";
     button2.onclick = loadSquirrelScene;
@@ -112,10 +112,27 @@ function loadRightStory() {
     text.textContent = alienName + " tar den högra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " någon ropa efter hen, vad ska " + alienName + " göra?";
 
     button1.textContent = "Ignorera och fortsätta leta i skogen";
-    button1.onclick = () => {};
+    button1.onclick = loadContinueAlone;
 
     button2.textContent = "Se efter vem som ropar";
+    button2.onclick = loadWeaselScene;
+}
+
+
+/** Här fortsätter man ensam */
+function loadContinueAlone() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    
+    text.textContent = alienName + " fortsätter leta efter skeppet på egen hand och kommer tillslut fram till platsen där skeppet ska finnas. " + alienName + " använder ett verktyg för att kunna hitta den exakta positionen för rymdfärjan.";
+    
+    button1.textContent = "alt 1";
+    button1.onclick = () => {};
+    
+    button2.textContent = "alt 2";
     button2.onclick = () => {};
+    
 }
 
 
@@ -125,13 +142,13 @@ function loadSquirrelScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = alienName + "namn undersöker busken och hittar en ekorre. “AAAH!” - skrek ekorren. “SKRÄMS INTE SÅ!!”." + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + "är ute och går mitt i natten. Vad svarar " + alienName + "?";
+    text.textContent = alienName + " undersöker busken och hittar en ekorre. “AAAH!” - skrek ekorren. “SKRÄMS INTE SÅ!!”. " + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + " är ute och går mitt i natten. Vad ska " + alienName + " svara?";
 
     button1.textContent = "Är ärlig och förklarar situationen";
     button1.onclick = () => {};
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen är ute på en kvällspromenad";
-    button2.onclick = () => {};
+    button2.onclick = loadContinueAlone;
 }
 
 
@@ -141,15 +158,27 @@ function loadWeaselScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = alienName + " följer ljudet ifrån ropen, och möter tillslut en vessla som står på en sten. “Godkväll!” - sa vesslan. “Ute på en nattpromenad ser jag, varför detta?” - frågade vesslan. Vad svarar " + alienName + "?";
+    text.textContent = alienName + " följer ljudet ifrån ropen, och möter tillslut en vessla som står på en sten. “Godkväll!” - sa vesslan. “Ute på en nattpromenad ser jag, varför detta?” - frågade vesslan lite mystiskt. Vad svarar " + alienName + "?";
 
     button1.textContent = "Är ärlig och förklarar situationen";
     button1.onclick = () => {};
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen gillar den friska luften på natten";
-    button2.onclick = () => {};
+    button2.onclick = loadContinueAlone;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,41 +230,6 @@ function loadWeaselScene() {
 //     button2.textContent = "Undersök busken";
 //     button2.onclick = () => {};
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // const input = document.createElement('input');
-    // input.setAttribute('id', 'alien');
-    // input.setAttribute('type', 'text');
-    // document.body.appendChild(input);
-
-    // const alienName = document.getElementById('alien');
-    // alienName.setAttribute('placeholder', 'Skriv här');
-    // const value = alienName.value;
-    // console.log(value);
-
-
-
-
-
 
 
 
