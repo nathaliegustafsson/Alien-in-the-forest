@@ -99,7 +99,7 @@ function loadLeftStory() {
     button1.onclick = () => {};
 
     button2.textContent = "Undersöka busken";
-    button2.onclick = () => {};
+    button2.onclick = loadSquirrelScene;
 }
 
 
@@ -119,20 +119,88 @@ function loadRightStory() {
 }
 
 
-/** VÄNSTER VÄG */
-function loadLeftStory() {
+/** Ekorrens väg (vänster) */
+function loadSquirrelScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
-    
-    button1.textContent = "Ignorera ljudet från busken och fortsätt";
+    text.textContent = alienName + "namn undersöker busken och hittar en ekorre. “AAAH!” - skrek ekorren. “SKRÄMS INTE SÅ!!”." + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + "är ute och går mitt i natten. Vad svarar " + alienName + "?";
+
+    button1.textContent = "Är ärlig och förklarar situationen";
     button1.onclick = () => {};
 
-    button2.textContent = "Undersöka busken";
+    button2.textContent = "Vill inte berätta sanningen och svarar att hen är ute på en kvällspromenad";
     button2.onclick = () => {};
 }
+
+
+/** Vesslans väg (höger) */
+function loadWeaselScene() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = alienName + " följer ljudet ifrån ropen, och möter tillslut en vessla som står på en sten. “Godkväll!” - sa vesslan. “Ute på en nattpromenad ser jag, varför detta?” - frågade vesslan. Vad svarar " + alienName + "?";
+
+    button1.textContent = "Är ärlig och förklarar situationen";
+    button1.onclick = () => {};
+
+    button2.textContent = "Vill inte berätta sanningen och svarar att hen gillar den friska luften på natten";
+    button2.onclick = () => {};
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /** VÄNSTER VÄG */
+// function loadLeftStory() {
+//     const text = document.getElementById('story-text');
+//     const button1 = document.getElementById('alt-1');
+//     const button2 = document.getElementById('alt-2');
+
+//     text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
+    
+//     button1.textContent = "Ignorera ljudet från busken och fortsätt";
+//     button1.onclick = () => {};
+
+//     button2.textContent = "Undersök busken";
+//     button2.onclick = () => {};
+// }
 
 
 
