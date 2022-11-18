@@ -1,5 +1,10 @@
 window.addEventListener("DOMContentLoaded", main);
 
+
+/** Användaren väljer ett namn till rymdvarelsen innan storyn börjar */
+let alienName = "";
+
+
 /** Startar intro-scenen när allt laddats */
 function main () {
     loadStartScene();
@@ -42,15 +47,27 @@ function loadNoToStartScene() {
 function loadYesToStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+    document.getElementById('input').style.display = "block";
 
     text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Ge ett namn till rymdvarelsen du vill hjälpa.";
 
-    button1.textContent = "Här ska det vara ett inputfält";
-    button1.onclick = loadBeginningOfStory;
+    button1.textContent = "OK";
+    button1.onclick = saveNameAndContinue;
+}
+
+
+/** Här sparas alienName och sedan fortsätter storyn */
+function saveNameAndContinue() {
+    const button2 = document.getElementById('alt-2');
+    const input = document.getElementById('input');
+    alienName = input.value
+    input.value = "";
     
-    button2.textContent = "Här ska det vara ett inputfält";
-    button2.onclick = loadBeginningOfStory;
+    input.style.display = null;
+    button2.style.display = "block";
+
+    loadBeginningOfStory();
 }
 
 
@@ -59,12 +76,12 @@ function loadBeginningOfStory() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
-
-    text.textContent = "Rymdvarelsen börjar gå genom skogen, det är alldeles tyst och månen lyser starkt på himlen. Efter en stund kommer *NAMN* fram till ett vägskäl, vilken väg ska hen ta?";
-
+    
+    text.textContent = "Rymdvarelsen börjar gå genom skogen, det är alldeles tyst och månen lyser starkt på himlen. Efter en stund kommer " + alienName + " fram till ett vägskäl, vilken väg ska " + alienName + " ta?";
+    
     button1.textContent = "Gå vänster";
     button1.onclick = loadLeftStory;
-
+    
     button2.textContent = "Gå höger";
     button2.onclick = loadRightStory;
 }
@@ -76,7 +93,7 @@ function loadLeftStory() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = "*NAMN* tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *NAMN* ett ljud från en buske, vad ska *NAMN* göra?";
+    text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
     
     button1.textContent = "Ignorera ljudet från busken och fortsätt";
     button1.onclick = () => {};
@@ -92,7 +109,7 @@ function loadRightStory() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = "*NAMN* tar den högra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *namn* någon ropa efter hen, vad ska namn göra?";
+    text.textContent = alienName + " tar den högra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " någon ropa efter hen, vad ska " + alienName + " göra?";
 
     button1.textContent = "Ignorera och fortsätta leta i skogen";
     button1.onclick = () => {};
@@ -108,7 +125,7 @@ function loadLeftStory() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = "*NAMN* tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör *NAMN* ett ljud från en buske, vad ska *NAMN* göra?";
+    text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
     
     button1.textContent = "Ignorera ljudet från busken och fortsätt";
     button1.onclick = () => {};
