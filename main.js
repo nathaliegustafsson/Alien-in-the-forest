@@ -184,7 +184,7 @@ function loadSquirrelAnswer() {
     const button1 = document.getElementById('alt-1');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = "“Jaha, jaja, men du behöver inte skrämmas för det!!!” - sa ekorren bittert och försvann upp i trädet bredvid busken."
+    text.textContent = "“Jaha, jaja, men du behöver inte skrämmas för det!!!” - sa ekorren bittert och försvann upp i trädet bredvid busken.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadContinueAlone;
@@ -220,19 +220,6 @@ function loadHonestToSquirrel() {
 
     button2.textContent = "Nej";
     button2.onclick = loadContinueAlone;
-}
-
-
-/** Slutet om man inte väljer att undersöka (ensamt slut), finns möjlighet att börja om från början */
-function loadLonleyEnding() {
-    const text = document.getElementById('story-text');
-    const button1 = document.getElementById('alt-1');
-    document.getElementById('alt-2').style.display = "none";
-
-    text.textContent = alienName + " hittar sin rymdfärja och åker tillbaka ut i rymden, för att åka tillbaka till sin hemplanet.";
-
-    button1.textContent = "Börja om från början";
-    button1.onclick = loadStartScene;
 }
 
 
@@ -326,7 +313,20 @@ function loadWillSquirrelJoin() {
 }
 
 
-/** Slutet med VESSLAN */
+/** Slutet om man inte väljer att undersöka (ensamt slut), finns möjlighet att börja om från början */
+function loadLonleyEnding() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " hittar sin rymdfärja och åker tillbaka ut i rymden, för att åka tillbaka till sin hemplanet.";
+
+    button1.textContent = "Börja om från början";
+    button1.onclick = loadStartScene;
+}
+
+
+/** Slutet med VESSLAN , finns möjlighet att börja om från början*/
 function loadEndingWithWeasel() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -340,7 +340,7 @@ function loadEndingWithWeasel() {
 }
 
 
-/** Slutet med EKORREN */
+/** Slutet med EKORREN, finns möjlighet att börja om från början */
 function loadEndingWithSquirrel() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
