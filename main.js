@@ -249,7 +249,21 @@ function loadGetHelpFromSquirrel() {
 }
 
 
-/** Frågar om EKORREN vill följa med till rymden */
+/** Tacka ja till VESSLANS hjälp */
+function loadGetHelpFromWeasel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " och vesslan fortsätter tillsammans leta efter rymdfärjan och kommer tillslut fram till platsen där den finns.";
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadAskWeaselToJoin;
+}
+
+
+/** Frågar om EKORREN vill följa med till rymden eller inte */
 function loadAskSquirrelToJoin() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -264,6 +278,36 @@ function loadAskSquirrelToJoin() {
     button2.onclick = loadContinueAlone;
 }
 
+/** Frågar om VESSLAN vill följa med till rymden eller inte */
+function loadAskWeaselToJoin() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "Väl framme vid rymdfärjan funderar " + alienName + " på om hen ska fråga om vesslan till följa med ut till rymden, ska " + alienName + " fråga om vesslan vill följa med?";
+
+    button1.textContent = "Ja";
+    button1.onclick = loadWillSquirrelJoin;
+
+    button2.textContent = "Nej";
+    button2.onclick = loadContinueAlone;
+}
+
+
+/** Svar på frågan om VESSLAN vill följa med till rymden */
+function loadWillWeaselJoin() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " frågar om vesslan vill följa med ut i rymden och vesslan svarar ja!";
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadEndingWithWeasel;
+}
+
+
 
 /** Svar på frågan om EKORREN vill följa med till rymden */
 function loadWillSquirrelJoin() {
@@ -276,6 +320,19 @@ function loadWillSquirrelJoin() {
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadEndingWithSquirrel;
+}
+
+/** Slutet med VESSLAN */
+function loadEndingWithWeasel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " och vesslan åker tillsammans ut i rymden på nya äventyr!";
+
+    button1.textContent = "Börja om från början";
+    button1.onclick = loadStartScene;
 }
 
 
