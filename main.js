@@ -123,20 +123,15 @@ function loadRightStory() {
 function loadContinueAlone() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
-    button2.style.display = "block";
     
     text.textContent = alienName + " fortsätter leta efter skeppet på egen hand och kommer tillslut fram till platsen där skeppet ska finnas. " + alienName + " använder ett verktyg för att kunna hitta den exakta positionen för rymdfärjan.";
     
-    button1.textContent = "alt 1";
-    button1.onclick = () => {};
-    
-    button2.textContent = "alt 2";
-    button2.onclick = () => {};
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadLonleyEnding;
 }
 
 
-/** Ekorrens väg (vänster) */
+/** EKORRENS väg (vänster) */
 function loadSquirrelScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -152,7 +147,7 @@ function loadSquirrelScene() {
 }
 
 
-/** Vesslans väg (höger) */
+/** VESSLANS väg (höger) */
 function loadWeaselScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -167,20 +162,21 @@ function loadWeaselScene() {
     button2.onclick = loadWeaselAnswer;
 }
 
-/** Vill inte berätta för vesslan */
+
+/** Vill inte berätta för VESSLAN */
 function loadWeaselAnswer() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = "“Mhm, jag förstår. Ja, visst är det skönt med frisk luft! Ha en fin fortsatt nattpromenad då” - sa vesslan och gick sin väg."
+    text.textContent = "“Mhm, jag förstår. Ja, visst är det skönt med frisk luft! Ha en fin fortsatt nattpromenad då” - sa vesslan och gick sin väg.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadContinueAlone;
 }
 
 
-/** Vill inte berätta för ekorren */
+/** Vill inte berätta för EKORREN */
 function loadSquirrelAnswer() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -193,7 +189,23 @@ function loadSquirrelAnswer() {
 }
 
 
-/** Är ärlig mot Ekorren */
+/** Är ärlig mot VESSLAN */
+function loadHonestToWeasel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "”WOW, vilken story!” - utbrister vesslan. “Vilken tur att du är oskadd! Vill du ha hjälp att hitta ditt andra skepp?” - frågar Vesslan.";
+
+    button1.textContent = "Ja";
+    button1.onclick = () => {};
+
+    button2.textContent = "Nej";
+    button2.onclick = loadContinueAlone;
+}
+
+
+/** Är ärlig mot EKORREN */
 function loadHonestToSquirrel() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
@@ -209,20 +221,20 @@ function loadHonestToSquirrel() {
 }
 
 
-/** Är ärlig mot Vesslan */
-function loadHonestToWeasel() {
+/** Slutet om man inte väljer att undersöka (ensamt slut) */
+function loadLonleyEnding() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
 
-    text.textContent = "”WOW, vilken story!” - utbrister vesslan. “Vilken tur att du är oskadd! Vill du ha hjälp att hitta ditt andra skepp?” - frågar Vesslan.";
+    text.textContent = alienName + " hittar sin rymdfärja och åker tillbaka ut i rymden, för att åka tillbaka till sin hemplanet.";
 
-    button1.textContent = "Ja";
-    button1.onclick = () => {};
-
-    button2.textContent = "Nej";
-    button2.onclick = loadContinueAlone;
+    button1.textContent = "Börja om från början";
+    button1.onclick = loadBeginningOfStory;
 }
+
+
+
+
 
 
 
