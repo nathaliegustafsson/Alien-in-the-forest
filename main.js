@@ -17,7 +17,7 @@ function loadStartScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = "Välkommen till jorden! En rymdvarelse har kraschat med sin rymdfärja, och måste hitta en ny rymdfärja för att kunna ta sig hem. Rymdvarelsen har landat i en skog mitt i natten och du måste hjälpa den hitta sin väg genom skogen för att finna rymdfärjan. Vill du hjälpa rymdvarelsen?";
+    text.textContent = "Välkommen till jorden! \nEn rymdvarelse har kraschat med sin rymdfärja, och måste hitta en ny rymdfärja för att kunna ta sig hem. Rymdvarelsen har landat i en skog mitt i natten och du måste hjälpa den hitta sin väg genom skogen för att finna rymdfärjan. Vill du hjälpa rymdvarelsen?";
 
     button1.textContent = "Ja";
     button1.onclick = loadYesToStartScene;
@@ -33,7 +33,7 @@ function loadNoToStartScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = "Åh, vad tråkigt att du inte vill hjälpa rymdvarelsen :( Vi får hoppas att den hittar sin rymdfärja själv </3";
+    text.textContent = "Åh, vad tråkigt att du inte vill hjälpa rymdvarelsen :( \nVi får hoppas att den hittar sin rymdfärja själv </3";
 
     button1.textContent = "Gå tillbaka";
     button1.onclick = loadStartScene;
@@ -50,7 +50,7 @@ function loadYesToStartScene() {
     document.getElementById('alt-2').style.display = "none";
     document.getElementById('input').style.display = "block";
 
-    text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! Ge ett namn till rymdvarelsen du vill hjälpa.";
+    text.textContent = "Jaa! Vad snällt av dig att vilja hjälpa rymdvarelsen! \nGe ett namn till rymdvarelsen du vill hjälpa.";
 
     button1.textContent = "OK";
     button1.onclick = saveNameAndContinue;
@@ -95,7 +95,7 @@ function loadLeftStory() {
 
     text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
     
-    button1.textContent = "Ignorera ljudet från busken och fortsätt";
+    button1.textContent = "Ignorera ljudet från busken och fortsätta";
     button1.onclick = loadContinueAlone;
 
     button2.textContent = "Undersöka busken";
@@ -124,6 +124,7 @@ function loadContinueAlone() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
+    button2.style.display = "block";
     
     text.textContent = alienName + " fortsätter leta efter skeppet på egen hand och kommer tillslut fram till platsen där skeppet ska finnas. " + alienName + " använder ett verktyg för att kunna hitta den exakta positionen för rymdfärjan.";
     
@@ -141,13 +142,13 @@ function loadSquirrelScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = alienName + " undersöker busken och hittar en ekorre. “AAAH!” - skrek ekorren. “SKRÄMS INTE SÅ!!”. " + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + " är ute och går mitt i natten. Vad ska " + alienName + " svara?";
+    text.textContent = alienName + " undersöker busken och hittar en ekorre. “AAAH!” - skriker ekorren. “SKRÄMS INTE SÅ!!”. " + alienName + " ber om ursäkt och ekorren frågar varför " + alienName + " är ute och går mitt i natten. Vad ska " + alienName + " svara?";
 
     button1.textContent = "Är ärlig och förklarar situationen";
     button1.onclick = loadHonestToSquirrel;
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen är ute på en kvällspromenad";
-    button2.onclick = () => {};
+    button2.onclick = loadSquirrelAnswer;
 }
 
 
@@ -157,45 +158,70 @@ function loadWeaselScene() {
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
-    text.textContent = alienName + " följer ljudet ifrån ropen, och möter tillslut en vessla som står på en sten. “Godkväll!” - sa vesslan. “Ute på en nattpromenad ser jag, varför detta?” - frågade vesslan lite mystiskt. Vad svarar " + alienName + "?";
+    text.textContent = alienName + " följer ljudet ifrån ropen, och möter tillslut en vessla som står på en sten. “Godkväll!” - sa vesslan. “Ute på en nattpromenad ser jag, varför detta?” - frågade vesslan. Vad svarar " + alienName + "?";
 
     button1.textContent = "Är ärlig och förklarar situationen";
-    button1.onclick = () => {};
+    button1.onclick = loadHonestToWeasel;
 
     button2.textContent = "Vill inte berätta sanningen och svarar att hen gillar den friska luften på natten";
-    button2.onclick = () => {};
+    button2.onclick = loadWeaselAnswer;
+}
+
+/** Vill inte berätta för vesslan */
+function loadWeaselAnswer() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = "“Mhm, jag förstår. Ja, visst är det skönt med frisk luft! Ha en fin fortsatt nattpromenad då” - sa vesslan och gick sin väg."
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadContinueAlone;
 }
 
 
-/** Tar emot Ekorrens hjälp */
+/** Vill inte berätta för ekorren */
+function loadSquirrelAnswer() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = "“Jaha, jaja, men du behöver inte skrämmas för det!!!” - sa ekorren bittert och försvann upp i trädet bredvid busken."
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadContinueAlone;
+}
+
+
+/** Är ärlig mot Ekorren */
 function loadHonestToSquirrel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "“VA??? PÅ RIKTIGT??” - skriker ekorren. “Det var ju klantigt av dig att kraschlanda här mitt i natten och skrämma slaget på ekorrar i samma veva.” - muttrar ekorren. “Jaja, behöver du ha någon hjälp med att hitta ditt skepp? Det har ju inte gått så bra hitills menar jag” - frågar ekorren.";
+
+    button1.textContent = "Ja";
+    button1.onclick = () => {};
+
+    button2.textContent = "Nej";
+    button2.onclick = loadContinueAlone;
+}
+
+
+/** Är ärlig mot Vesslan */
+function loadHonestToWeasel() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
 
     text.textContent = "”WOW, vilken story!” - utbrister vesslan. “Vilken tur att du är oskadd! Vill du ha hjälp att hitta ditt andra skepp?” - frågar Vesslan.";
 
-    button1.textContent = "";
+    button1.textContent = "Ja";
     button1.onclick = () => {};
 
-    button2.textContent = "";
-    button2.onclick = () => {};
-}
-
-
-/** Tar emot Vesslans hjälp */
-function loadHonestToWeasel() {
-    const text = document.getElementById('story-text');
-    const button1 = document.getElementById('alt-1');
-    const button2 = document.getElementById('alt-2');
-
-    text.textContent = "";
-
-    button1.textContent = "";
-    button1.onclick = () => {};
-
-    button2.textContent = "";
-    button2.onclick = () => {};
+    button2.textContent = "Nej";
+    button2.onclick = loadContinueAlone;
 }
 
 
@@ -238,23 +264,3 @@ function loadHonestToWeasel() {
 
 
 
-
-
-
-
-
-
-// /** VÄNSTER VÄG */
-// function loadLeftStory() {
-//     const text = document.getElementById('story-text');
-//     const button1 = document.getElementById('alt-1');
-//     const button2 = document.getElementById('alt-2');
-
-//     text.textContent = alienName + " tar den vänstra vägen och fortsätter letandet. Det börjar blåsa lite och det är en ljummen natt. Plötsligt hör " + alienName + " ett ljud från en buske, vad ska " + alienName + " göra?";
-    
-//     button1.textContent = "Ignorera ljudet från busken och fortsätt";
-//     button1.onclick = () => {};
-
-//     button2.textContent = "Undersök busken";
-//     button2.onclick = () => {};
-// }
