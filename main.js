@@ -16,6 +16,7 @@ function loadStartScene() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "block";
 
     text.textContent = "Välkommen till jorden! \nEn rymdvarelse har kraschat med sin rymdfärja, och måste hitta en ny rymdfärja för att kunna ta sig hem. Rymdvarelsen har landat i en skog mitt i natten och du måste hjälpa den hitta sin väg genom skogen för att finna rymdfärjan. Vill du hjälpa rymdvarelsen?";
 
@@ -123,6 +124,7 @@ function loadRightStory() {
 function loadContinueAlone() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
+    document.getElementById('alt-2').style.display = "none";
     
     text.textContent = alienName + " fortsätter leta efter skeppet på egen hand och kommer tillslut fram till platsen där skeppet ska finnas. " + alienName + " använder ett verktyg för att kunna hitta den exakta positionen för rymdfärjan.";
     
@@ -214,24 +216,81 @@ function loadHonestToSquirrel() {
     text.textContent = "“VA??? PÅ RIKTIGT??” - skriker ekorren. “Det var ju klantigt av dig att kraschlanda här mitt i natten och skrämma slaget på ekorrar i samma veva.” - muttrar ekorren. “Jaja, behöver du ha någon hjälp med att hitta ditt skepp? Det har ju inte gått så bra hitills menar jag” - frågar ekorren.";
 
     button1.textContent = "Ja";
-    button1.onclick = () => {};
+    button1.onclick = loadGetHelpFromSquirrel;
 
     button2.textContent = "Nej";
     button2.onclick = loadContinueAlone;
 }
 
 
-/** Slutet om man inte väljer att undersöka (ensamt slut) */
+/** Slutet om man inte väljer att undersöka (ensamt slut), finns möjlighet att börja om från början */
 function loadLonleyEnding() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
+    document.getElementById('alt-2').style.display = "none";
 
     text.textContent = alienName + " hittar sin rymdfärja och åker tillbaka ut i rymden, för att åka tillbaka till sin hemplanet.";
 
     button1.textContent = "Börja om från början";
-    button1.onclick = loadBeginningOfStory;
+    button1.onclick = loadStartScene;
 }
 
+/** Tacka ja till EKORRENS hjälp */
+function loadGetHelpFromSquirrel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan och kommer tillslut fram till platsen där den finns.";
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = () => {};
+}
+
+
+/** Frågar om EKORREN vill följa med till rymden */
+function loadAskSquirrelToJoin() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+
+    text.textContent = "Väl framme vid rymdfärjan funderar " + alienName + " på om hen ska fråga om ekorren till följa med ut till rymden, ska " + alienName + " fråga om ekorren vill följa med?";
+
+    button1.textContent = "Ja";
+    button1.onclick = loadWillSquirrelJoin;
+
+    button2.textContent = "Nej";
+    button2.onclick = loadContinueAlone;
+}
+
+
+/** Svar på frågan om EKORREN vill följa med till rymden */
+function loadWillSquirrelJoin() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " frågar om ekorren vill följa med ut i rymden och ekorren svarar ja!";
+
+    button1.textContent = "Fortsätt";
+    button1.onclick = loadEndingWithSquirrel;
+}
+
+
+/** Slutet med EKORREN */
+function loadEndingWithSquirrel() {
+    const text = document.getElementById('story-text');
+    const button1 = document.getElementById('alt-1');
+    const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "none";
+
+    text.textContent = alienName + " och ekorren åker tillsammans ut i rymden på nya äventyr!";
+
+    button1.textContent = "Börja om från början";
+    button1.onclick = loadStartScene;
+}
 
 
 
