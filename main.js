@@ -245,7 +245,7 @@ function loadGetHelpFromSquirrel() {
     text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan och kommer tillslut fram till platsen där den finns.";
 
     button1.textContent = "Fortsätt";
-    button1.onclick = () => {};
+    button1.onclick = loadAskSquirrelToJoin;
 }
 
 
@@ -268,6 +268,7 @@ function loadAskSquirrelToJoin() {
     const text = document.getElementById('story-text');
     const button1 = document.getElementById('alt-1');
     const button2 = document.getElementById('alt-2');
+    document.getElementById('alt-2').style.display = "block";
 
     text.textContent = "Väl framme vid rymdfärjan funderar " + alienName + " på om hen ska fråga om ekorren till följa med ut till rymden, ska " + alienName + " fråga om ekorren vill följa med?";
 
