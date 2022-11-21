@@ -126,7 +126,7 @@ function loadContinueAlone() {
     const button1 = document.getElementById('alt-1');
     document.getElementById('alt-2').style.display = "none";
     
-    text.textContent = alienName + " fortsätter leta efter skeppet på egen hand och kommer tillslut fram till platsen där skeppet ska finnas. " + alienName + " använder ett verktyg för att kunna hitta den exakta positionen för rymdfärjan.";
+    text.textContent = alienName + " fortsätter leta efter rymdfärjan och kommer tillslut fram till platsen där den ska finnas. " + alienName + " Undersöker platsen och försöker hitta den exakta positionen för rymdfärjan.";
     
     button1.textContent = "Fortsätt";
     button1.onclick = loadLonleyEnding;
@@ -230,7 +230,7 @@ function loadGetHelpFromSquirrel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan. Ekorren berättar att hen blivit vräkt från trädet och att det var därför hen var där. Ekorren är inte vad vid att bli störd i sitt hem.  Tillslut kommer de fram till platsen där rymfärjan finns.";
+    text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan. Ekorren berättar att hen blivit vräkt från trädet och att det var därför hen var i busken. Ekorren är inte vad vid att bli störd i sitt hem. Tillslut kommer de fram till platsen där rymfärjan finns.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadAskSquirrelToJoin;
@@ -319,7 +319,7 @@ function loadLonleyEnding() {
     const button1 = document.getElementById('alt-1');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " hittar sin rymdfärja och åker tillbaka ut i rymden, för att åka tillbaka till sin hemplanet.";
+    text.textContent = alienName + " hittar tillslut sin rymdfärja och åker tillbaka ut i rymden. " + alienName + " sätter destinationen mot en ny planet och fortsätter sitt äventyr. \n\n Tack för att du hjälpte rymdvarelsen att hitta sin rymdfärja!";
 
     button1.textContent = "Börja om från början";
     button1.onclick = loadStartScene;
@@ -333,7 +333,7 @@ function loadEndingWithWeasel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och vesslan går på rymfärjan och sätter destinationen till en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! Tack för din hjälp med att vägleda rymdvarelsen till att hitta rymdfärjan, och nu också en resekompanjon!";
+    text.textContent = alienName + " och vesslan går på rymfärjan och sätter destinationen mot en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! \n\nTack för din hjälp med att vägleda rymdvarelsen att hitta rymdfärjan, och nu också en resekompanjon!";
 
     button1.textContent = "Börja om från början";
     button1.onclick = loadStartScene;
@@ -347,7 +347,7 @@ function loadEndingWithSquirrel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och ekorren går på rymfärjan och sätter destinationen till en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! Tack för din hjälp med att vägleda rymdvarelsen till att hitta rymdfärjan, och nu också en resekompanjon!";
+    text.textContent = alienName + " och ekorren går på rymfärjan och sätter destinationen mot en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! \n\nTack för din hjälp med att vägleda rymdvarelsen att hitta rymdfärjan, och nu också en resekompanjon!";
 
     button1.textContent = "Börja om från början";
     button1.onclick = loadStartScene;
