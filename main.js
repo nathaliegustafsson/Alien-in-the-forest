@@ -230,7 +230,7 @@ function loadGetHelpFromSquirrel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan och kommer tillslut fram till platsen där den finns.";
+    text.textContent = alienName + " och ekorren fortsätter tillsammans leta efter rymdfärjan. Ekorren berättar att hen blivit vräkt från trädet och att det var därför hen var där. Ekorren är inte vad vid att bli störd i sitt hem.  Tillslut kommer de fram till platsen där rymfärjan finns.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadAskSquirrelToJoin;
@@ -244,7 +244,7 @@ function loadGetHelpFromWeasel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och vesslan fortsätter tillsammans leta efter rymdfärjan och kommer tillslut fram till platsen där den finns.";
+    text.textContent = alienName + " och vesslan fortsätter tillsammans leta efter rymdfärjan. Vesslan berättar att hen själv är ute på äventyr och reser från skog till skog för att upptäcka och träffa på nya vänner. Tillslut kommer de fram till platsen där rymdfärjan finns.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadAskWeaselToJoin;
@@ -292,7 +292,7 @@ function loadWillWeaselJoin() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " frågar om vesslan vill följa med ut i rymden och vesslan svarar ja!";
+    text.textContent = alienName + " frågar om vesslan vill följa med ut i rymden. “JA!!” - utbrister vesslan. “Det skulle bli mitt största äventyr hitills!”";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadEndingWithWeasel;
@@ -306,7 +306,7 @@ function loadWillSquirrelJoin() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " frågar om ekorren vill följa med ut i rymden och ekorren svarar ja!";
+    text.textContent = alienName + " frågar om ekorren vill följa med ut i rymden. Först är ekorren lite tveksam, och funderar en stund innan hen svarar. Tillslut svarar ekorren ja! “Det hade ju varit trevligt att slippa bo i busken” - sa ekorren.";
 
     button1.textContent = "Fortsätt";
     button1.onclick = loadEndingWithSquirrel;
@@ -333,7 +333,7 @@ function loadEndingWithWeasel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och vesslan åker tillsammans ut i rymden på nya äventyr!";
+    text.textContent = alienName + " och vesslan går på rymfärjan och sätter destinationen till en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! Tack för din hjälp med att vägleda rymdvarelsen till att hitta rymdfärjan, och nu också en resekompanjon!";
 
     button1.textContent = "Börja om från början";
     button1.onclick = loadStartScene;
@@ -347,7 +347,7 @@ function loadEndingWithSquirrel() {
     const button2 = document.getElementById('alt-2');
     document.getElementById('alt-2').style.display = "none";
 
-    text.textContent = alienName + " och ekorren åker tillsammans ut i rymden på nya äventyr!";
+    text.textContent = alienName + " och ekorren går på rymfärjan och sätter destinationen till en ny planet som ingen undersökt ännu. Tillsammans kommer de att upptäcka massa spännade saker ute i rymden! Tack för din hjälp med att vägleda rymdvarelsen till att hitta rymdfärjan, och nu också en resekompanjon!";
 
     button1.textContent = "Börja om från början";
     button1.onclick = loadStartScene;
